@@ -1,12 +1,12 @@
 package com.example.demo.web;
 
 import com.example.demo.domain.Albums;
+import com.example.demo.infrastructure.AlbumsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,8 @@ import java.util.Locale;
 @Controller
 public class AppController {
 
+    @Autowired
+    AlbumsRepository albumsRepository;
 
     @GetMapping ("/hello")
     String getHello () {
@@ -44,5 +46,20 @@ public class AppController {
 
         System.out.println(album);
         return album;
+    }
+
+    @GetMapping ("/albumpage")
+    String addAlbumForm (Model model) {
+        model.addAttribute("albumList", albumsRepository.findAll());
+        return "formAlbum";
+    }
+
+
+
+
+    @PostMapping ("/addalbum")
+    RedirectView createNemAlbum(@ModelAttribute Albums album){
+        albumsRepository.save(album);
+        return new RedirectView("albumpage");
     }
 }

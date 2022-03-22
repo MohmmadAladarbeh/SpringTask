@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get Album</title>
+    <link th:href="@{/style.css}" rel="stylesheet">
+</head>
+<body>
+    <form action="/addalbum" method="post" class="form-contact">
+        <fieldset class="fieldset">
+            <legend class="fieldset-title">Enter Your Song : </legend>
+
+            <div class=""input_form>
+                <label>Song Title : </label><br>
+                <input type="text" name="title" required><br>
+            </div>
+            <div>
+                <label>Artist Name : </label><br>
+                <input type="text" name="artist" required><br>
+            </div>
+            <div>
+                <label>Song Count : </label><br>
+                <input type="number" name="songCount" required><br>
+            </div>
+            <div>
+                <label>Image URL : </label><br>
+                <input type="text" name="imageUrl" required><br>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+    <hr>
+    <ul th:each="album: ${albumList}">
+        <p>ID : <span th:text="${album.id}"></span></p>
+        <p>Song Title : <span th:text="${album.title}"></span></p>
+        <p>Artist Name : <span th:text="${album.artist}"></span></p>
+        <p>Song Count : <span th:text="${album.songCount}"></span></p>
+        <p>Image Url : <span th:text="${album.imageUrl}"></span></p>
+        <hr>
+    </ul>
+
+
+</body>
+</html>

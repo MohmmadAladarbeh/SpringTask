@@ -1,7 +1,16 @@
 package com.example.demo.domain;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Albums {
 
+    @Id
+    @GeneratedValue
+    private int id;
     private String title;
     private String artist;
     private int songCount;
@@ -12,6 +21,30 @@ public class Albums {
         this.artist = artist;
         this.songCount = songCount;
         this.imageUrl = imageUrl;
+    }
+
+    public Albums() {
+
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public void setSongCount(int songCount) {
+        this.songCount = songCount;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -30,13 +63,5 @@ public class Albums {
         return imageUrl;
     }
 
-    @Override
-    public String toString() {
-        return "albums{" +
-                "title='" + title + '\'' +
-                ", artist='" + artist + '\'' +
-                ", songCount=" + songCount +
-                ", imageUrl='" + imageUrl + '\'' +
-                '}';
-    }
+
 }
