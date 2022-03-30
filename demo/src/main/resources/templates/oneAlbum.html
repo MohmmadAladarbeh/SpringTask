@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <ul class="song-card"  th:each="song: ${song}">
+        <div class="content">
+            <p > <span class="title" th:text="${song.title}"></span></p>
+            <p>ID : <span th:text="${song.id}"></span></p>
+            <p>Song Length : <span th:text="${song.length}"></span></p>
+            <p>Truck Number : <span th:text="${song.trackNumber}"></span></p>
+        </div>
+    </ul>
+</div>
+
+</body>
+</html>
