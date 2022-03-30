@@ -37,3 +37,25 @@ in this Lab we should to use spring boot framework to deal with web app and crea
     spring.datasource.password=  
     spring.jpa.hibernate.ddl-auto=update  
     spring.sql.init.mode=always  
+
+# Lab 13
+in this lab we will do relashinship between model  
+## Explain
+* in this lab we do one-to-many relashinship between Song and Album model 
+* one song have one album  
+* one album have more than one song   
+* we use annotation to do this relashin (@oneToMany) in Album model
+* @ManyToOne in Song model
+
+## RoutePointe that I'm created in this Lab
+* /albumpage :  
+    in this route the user will see all album inside data base and he can spesigy and album to see the song
+* /addalbum :  
+    to allow the user to add new album in our database
+* /song :  
+    see all song inside Song table
+* /albumdetails/{id} :  
+    to get all song that found inside specific album with use id-album
+* /song/{id} :  
+    to add song inside specific album  with use id-album  
+

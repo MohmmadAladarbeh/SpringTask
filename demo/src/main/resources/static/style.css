@@ -35,7 +35,37 @@ input {
     width: 200px;
     padding: 5px;
 }
-button {
+.btn-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.btn-group button {
+    background-color: #04AA6D; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+.btn-form {
     border: 2px solid black;
     border-radius: 4px;
     width: 200px;
@@ -57,3 +87,46 @@ button {
     padding: 0 5px;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.container .card {
+    width: 250px;
+    height: 350px;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 20%);
+    margin: 15px;
+    padding: 25px;
+    align-items: center;
+
+}
+.container .card img {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+.container .card .content{
+    text-align: center;
+
+}
+.container .card .content .title {
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+.song-card {
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 20%);
+    margin: 15px;
+    padding: 25px;
+    align-items: center;
+}
+.song-card .content {
+    align-items: center;
+    text-align: center;
+}

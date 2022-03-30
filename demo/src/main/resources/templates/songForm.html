@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/style.css}" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+<form action="/usersong" method="post" class="form-contact">
+    <fieldset class="fieldset">
+        <legend class="fieldset-title">Enter Your Song : </legend>
+
+        <div class=""input_form>
+            <label>Song Title : </label><br>
+            <input type="text" name="title" required><br>
+        </div>
+        <div>
+            <label>Song length : </label><br>
+            <input type="text" name="length" required><br>
+        </div>
+        <div>
+            <label>Truck Number : </label><br>
+            <input type="number" name="trackNumber" required><br>
+        </div>
+
+
+        <div>
+            <button type="submit" class="btn-form">Add Song</button>
+        </div>
+    </fieldset>
+</form>
+
+<hr>
+<h1>All Songs Information</h1>
+<div class="container">
+    <ul class="song-card"  th:each="song: ${songsList}">
+        <div class="content">
+            <p > <span class="title" th:text="${song.title}"></span></p>
+            <p>ID : <span th:text="${song.id}"></span></p>
+            <p>Song Length : <span th:text="${song.length}"></span></p>
+            <p>Truck Number : <span th:text="${song.trackNumber}"></span></p>
+<!--            <p>Album Number : <span th:text="${song.album}"></span></p>-->
+        </div>
+    </ul>
+</div>
+
+
+    <script th:src="@{/main.js}"></script>
+</body>
+</html>
