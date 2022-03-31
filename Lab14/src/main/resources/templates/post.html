@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post</title>
+    <link th:href="@{/style.css}" rel="stylesheet">
+</head>
+<body >
+<header>
+
+    <div class="content">
+        <span>Welcome</span>
+        <a th:href="@{'/home'}">Home</a>
+    </div>
+    <div class="userInfo">
+        <form action="/logout" method="POST">
+            <button type="submit">Log out</button>
+        </form>
+        <span th:text="${username}"></span>
+    </div>
+</header>
+<div class="post-box">
+    <form action="/post" method="post">
+        <label class="post-label">Enter Your Post : </label> <br>
+        <textarea class="text-area" placeholder="enter your post here ...." name="textContent" rows = "6" cols = "30">
+
+        </textarea><br>
+        <button class="post-btn" type="submit">Add</button>
+    </form>
+</div>
+</body>
+</html>
