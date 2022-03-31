@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/*Header Style*/
+header {
+    background-color: cornflowerblue;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 200px;
+}
+
+header .content span{
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+    margin-right: 10px;
+}
+header .content a {
+    text-decoration: none;
+    color: blue;
+    font-size: 20px;
+}
+header .userInfo {
+    display: flex;
+    justify-content: space-between;
+}
+header .userInfo button {
+    background-color: darkcyan;
+    color: black;
+    border-radius: 10px;
+    padding: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition:0.7s ease;
+}
+header .userInfo button:hover {
+    background-color: blue;
+    transform: scale(1.1);
+}
+
+header .userInfo p {
+    color:#363636;
+    font-size: 22px;
+    font-weight: 600;
+
+}
+
+
+/*Section*/
+section {
+    padding: 100px 200px;
+}
+
+.signup-body {
+    background-color: #344a72;
+}
+.signup-box {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background-color: white;
+    border-radius: 5px;
+}
+.signup-box h1 {
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+.signup-box form {
+    width: 300px;
+    margin-left: 20px;
+}
+
+form lable {
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+form input {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+    margin-top: 5px;
+}
+
+.btn {
+    width: 300px;
+    height: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+    transition: 5s ease;
+}
+
+
+.btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.signup-box form a {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.signup-box form a:hover {
+    color:blue;
+    border-bottom: 1px solid blue;
+}
+
+.post-box {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background-color: #e0e0eb;
+    border-radius: 5px;
+    padding: 100px 10px 10px 10px;
+}
+.post-label {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+.text-area {
+    margin-top: 10px;
+}
+.post-btn {
+    width: 150px;
+    height: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+    transition: 5s ease;
+}
+.post-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.posts p {
+    margin: 5px;
+}
+.posts .post-number {
+    font-weight: 300;
+    font-size: 20px;
+}
+.posts .person span{
+    color: #363636;
+    font-size: 18px;
+}
+.posts .content {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.6;
+    word-spacing: 2px;
+}

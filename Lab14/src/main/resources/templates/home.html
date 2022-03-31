@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/style.css}" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <div class="content">
+            <span>Welcome</span>
+            <a th:href="@{'/home'}">Home</a>
+        </div>
+        <div class="userInfo">
+            <a th:href="@{'/post'}"><button>Add Post</button></a>
+            <form action="/logout" method="POST">
+                <button type="submit">Log out</button>
+            </form>
+            <span th:text="${username}"></span>
+        </div>
+    </header>
+
+    <section>
+        <div class="posts">
+            <ul th:each="post: ${postSet}">
+                <p class="post-number">Post Number <span th:text="${post.id}"></span></p>
+                <p class="person">From <span th:text=" ${post.users.getUsername()}"></span></p>
+                <p class="content" th:text="${post.textContent}"></p>
+                <hr>
+            </ul>
+        </div>
+
+    </section>
+</body>
+</html>
